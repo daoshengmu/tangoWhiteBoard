@@ -100,10 +100,11 @@ namespace Solution{
 			if (m_pointCloud.FindPlane(camera, touchPosition, out planeCenter, out plane))
 			{
 				// 2. Use CylinderFactory to create a new cylinder at the plane center.
-				CylinderFactory.CreateCylinder(planeCenter, plane.normal);
+				//不要丟 Cylinder 出來
+				//CylinderFactory.CreateCylinder(planeCenter, plane.normal);
 			}
 			else {
-				AndroidHelper.ShowAndroidToastMessage("Plane cannot be found here.");
+				//AndroidHelper.ShowAndroidToastMessage("Plane cannot be found here.");
 			}
 		}
 	}
