@@ -15,9 +15,13 @@ namespace Solution{
 		/// </summary>
 		public TangoPointCloud m_pointCloud;
 
+		public GameObject m_plane;
+
 		private TangoApplication m_tangoApplication;
 
 		private Vector2 m_touchPosition;
+
+		//private float m_whiteboardThreshold = 1;
 
 		/// <summary>
 		/// Flag if user touches screen and waits for a plane to be created
@@ -46,7 +50,7 @@ namespace Solution{
 			if (Input.touchCount == 1)
 			{
 				Touch t = Input.GetTouch(0);
-				Vector2 guiPosition = new Vector2(t.position.x, Screen.height - t.position.y);
+				//Vector2 guiPosition = new Vector2(t.position.x, Screen.height - t.position.y);
 				Camera cam = Camera.main;
 				RaycastHit hitInfo;
 
@@ -99,12 +103,18 @@ namespace Solution{
 			// https://developers.google.com/tango/apis/unity/reference/class/tango-point-cloud
 			if (m_pointCloud.FindPlane(camera, touchPosition, out planeCenter, out plane))
 			{
+//				if (Vector2.Distance (touchPosition, m_touchPosition) > m_whiteboardThreshold) {
+//					// new plane
+//				} else {
+//					// just painting the older planes.
+//				}
 				// 2. Use CylinderFactory to create a new cylinder at the plane center.
-				//不要丟 Cylinder 出來
 				//CylinderFactory.CreateCylinder(planeCenter, plane.normal);
+				m_plane.transform.rotation = Quaternion.FromToRotation(Vector3.up, plane.normal);
+				m_plane.transform.position = planeCenter;
 			}
 			else {
-				//AndroidHelper.ShowAndroidToastMessage("Plane cannot be found here.");
+				AndroidHelper.ShowAndroidToastMessage("Plane cannot be found here.");
 			}
 		}
 	}

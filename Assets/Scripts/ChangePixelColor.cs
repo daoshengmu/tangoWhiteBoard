@@ -11,6 +11,7 @@ public class ChangePixelColor : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		this.gameObject.GetComponent<Renderer>().enabled = false;
 		_texture = new Texture2D(128, 128);
 
 		// Fill the texture with white pixels!
@@ -68,6 +69,7 @@ public class ChangePixelColor : MonoBehaviour {
 
 	void PaintPixel(RaycastHit hit)
 	{
+		this.gameObject.GetComponent<Renderer>().enabled = true;
 		//if (collider.Raycast(ray, out hit, Mathf.Infinity))
 		{
 			// Find the u,v coordinate of the Texture
