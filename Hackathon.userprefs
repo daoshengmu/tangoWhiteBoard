@@ -1,0 +1,15 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/ColorPicker/ColorPicker.cs">
+    <Files>
+      <File FileName="Assets/Scripts/ChangePixelColor.cs" Line="87" Column="1" />
+      <File FileName="Assets/ColorPicker/ColorPicker.cs" Line="31" Column="29" />
+      <File FileName="Assets/ColorPicker/ObjectColor.cs" Line="16" Column="3" />
+      <File FileName="Assets/Scripts/BrushColor.cs" Line="13" Column="70" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
